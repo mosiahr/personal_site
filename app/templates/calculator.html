@@ -1,10 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}{{title}}{% endblock %}
+{% block content %}
+<div class="container calc">
+        <h1 class="jumbotron">{{title}}<span class="header-label"> <a rel="external" href="http://zakon3.rada.gov.ua/laws/show/1961-15">Закон України про ОСЦПВВНТЗ</a></span></h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div id="calc">
+                    <div class="form-group">
+                        <label for="auto">Транспортний засіб</label>
+                        <select id="auto" class="form-control"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="zone">Місце реєстрації ТЗ</label>
+                        <select id="zone" class="form-control"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="period">Період страхування</label>
+                        <select id="period" class="form-control"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="individual">Фізична чи юридична особа</label>
+                        <select id="individual" class="form-control"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bonus">Бонус/Малус</label>
+                        <select id="bonus" class="form-control"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exemption">Пільга, 50%</label>
+                        <select id="exemption" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Назва</th>
+                            <th>Коефіцієнт</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ТЗ</td>
+                            <td id="auto_rez">-</td>
+                        </tr>
+                        <tr>
+                            <td>Місце реєстрації</td>
+                            <td id="zone_rez">-</td>
+                        </tr>
+                        <tr>
+                            <td>Період страхування</td>
+                            <td id="period_rez">-</td>
+                        </tr>
+                        <tr>
+                            <td>Фізична чи юридична особа</td>
+                            <td id="individual_rez">-</td>
+                        </tr>
+                        <tr>
+                            <td>Бонус/Малус</td>
+                            <td id="bonus_rez">-</td>
+                        </tr>
+                        <tr>
+                            <td>Пільга</td>
+                            <td id="exemption_rez">-</td>
+                        </tr>
+                        <tr>
+                            <td><b>Результат</b></td>
+                            <td id="rezult">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
