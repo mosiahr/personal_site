@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "bootstrap/base.html" %}
 
-</body>
-</html>
+<!--<title>{% block title %}{% endblock %}</title>-->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+{% block styles %}
+{{ super() }}
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block navbar %}{{nav.topnavbar.render()}}{% endblock %}
+
+
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/calculator.js') }}"></script>
+{% endblock %}
+

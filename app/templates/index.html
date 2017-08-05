@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<h1 class="header">Главная</h1>
+<div class=""><a href="{{url_for('calculator')}}">Калькулятор ОСАГО</a></div>
+
+
+{% endblock %}
+
