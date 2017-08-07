@@ -3,3 +3,4 @@
 
 DEBUG = True
 SECRET_KEY = 'mykey'
+# DATABASE_URI = 'sqlite:////tmp/myapp.db

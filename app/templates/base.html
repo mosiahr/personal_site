@@ -2,15 +2,39 @@
 
 <!--<title>{% block title %}{% endblock %}</title>-->
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+{%- block head %}
 {% block styles %}
 {{ super() }}
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 {% endblock %}
+<script type="text/javascript">
+        var data = '{{ data|safe }}';
 
-{% block navbar %}{{nav.topnavbar.render()}}{% endblock %}
+        /* <![CDATA[ */
+        function externalLinks() {
+        links = document.getElementsByTagName("a");
+        for (i=0; i<links.length; i++) {
+            link = links[i];
+            if (link.getAttribute("href") && link.getAttribute("rel") == "external")
+                link.target = "_blank";
+            }
+        }
+        window.onload = externalLinks;
+        /* ]]> */
+</script>
+{%- endblock head %}
 
 
+{% block navbar %}
+{{nav.top.render(renderer='custom')}}
+{% endblock %}
 
+{%- block content %}
+{{super()}}
+{%- block footer %}
+<footer class="panel-footer">&copy; <i>2017 Mosia Hryhorii</i></footer>
+{%- endblock footer %}
+{%- endblock content %}
 {% block scripts %}
     {{ super() }}
     <script src="{{ url_for('static', filename='js/calculator.js') }}"></script>

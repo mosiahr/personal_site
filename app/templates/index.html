@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 
+
 {% block title %}{{title}}{% endblock %}
 
 {% block content %}
-<h1 class="header">Главная</h1>
+<div class="container">
+<h1 class="panel">Главная</h1>
 <div class=""><a href="{{url_for('calculator')}}">Калькулятор ОСАГО</a></div>
 
-
+</div>
+{{super()}}
 {% endblock %}
 
