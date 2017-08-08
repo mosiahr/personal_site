@@ -4,8 +4,8 @@
 
 $(document).ready(function() {
 
-    var osago = JSON.parse(data);
-    console.log(osago);
+
+
 
     function insertOption(el, ind) {
         var html = '';
@@ -84,20 +84,28 @@ $(document).ready(function() {
         document.getElementById('rezult').innerHTML = sum;
     }
 
-    insertOption('auto', 1);
-    insertOption('zone', 6);
-    insertOption('period', 7);
-    insertOption('individual', 1);
-    insertOptionBonus('bonus', 5);
-    insertOption('exemption', 2);
 
-    eventSelect('#auto');
-    eventSelect('#zone');
-    eventSelect('#period');
-    eventSelect('#individual');
-    eventSelect('#bonus');
-    eventSelect('#exemption');
+    try {
+        var osago = JSON.parse(data);
 
-    // When the page loads, the calculation is performed
-    change();
+        insertOption('auto', 1);
+        insertOption('zone', 6);
+        insertOption('period', 7);
+        insertOption('individual', 1);
+        insertOptionBonus('bonus', 5);
+        insertOption('exemption', 2);
+
+        eventSelect('#auto');
+        eventSelect('#zone');
+        eventSelect('#period');
+        eventSelect('#individual');
+        eventSelect('#bonus');
+        eventSelect('#exemption');
+
+        // When the page loads, the calculation is performed
+        change();
+        
+    }catch (e){}
+
+
 });

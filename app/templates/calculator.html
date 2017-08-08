@@ -1,7 +1,23 @@
 {% extends "base.html" %}
+{%- block head %}
+<!--{% block title %}{{title}}{% endblock %}-->
+{{super()}}
+<script type="text/javascript">
+        var data = '{{ data|safe }}';
 
-{% block title %}{{title}}{% endblock %}
-
+        /* <![CDATA[ */
+        function externalLinks() {
+        links = document.getElementsByTagName("a");
+        for (i=0; i<links.length; i++) {
+            link = links[i];
+            if (link.getAttribute("href") && link.getAttribute("rel") == "external")
+                link.target = "_blank";
+            }
+        }
+        window.onload = externalLinks;
+        /* ]]> */
+</script>
+{%- endblock head %}
 {% block content %}
 <div class="container calc">
         <h1 class="jumbotron">{{title}}<span class="header-label"> <a rel="external" href="http://zakon3.rada.gov.ua/laws/show/1961-15">Закон України про ОСЦПВВНТЗ</a></span></h1>
