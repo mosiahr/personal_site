@@ -8,19 +8,19 @@
 {%- endblock head %}
 
 {% block body %}
-{% block navbar %}
+
+
+<div id="nav">{% block navbar %}
 {{nav.top.render(renderer='custom')}}
-{% endblock %}
+{% endblock %}</div>
 
-<div class="content">
-{% block content %}
+<div id="content">{% block content %}
 {{super()}}
-    {% block footer %}
-    <footer class="panel-footer">&copy; <i>2017 Mosia Hryhorii</i></footer>
-    {% endblock %}
-{% endblock %}
-</div>
+{% endblock %}</div>
 
+<div id="footer">{% block footer %}
+    <footer class="panel-footer">&copy; <i>2017 Mosia Hryhorii</i></footer>
+{% endblock %}</div>
 
 {% block scripts %}
     {{ super() }}

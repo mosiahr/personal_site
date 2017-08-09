@@ -13,6 +13,7 @@ Bootstrap(app)
 from app.navbar import CustomRenderer
 from app import navbar
 register_renderer(app, 'custom', CustomRenderer)
+print(CustomRenderer)
 
 from app import views
 
